@@ -1,0 +1,31 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "make tsc",
+            "type": "shell",
+            "command": "make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "make prettier",
+            "type": "shell",
+            "command": "make prettier"
+        },
+        {
+            "label": "make tsc-watch",
+            "type": "shell",
+            "command": "make tsc-watch"
+        },
+        {
+            "label": "make lint",
+            "type": "shell",
+            "command": "make lint"
+        }
+    ]
+}

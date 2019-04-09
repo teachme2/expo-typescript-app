@@ -1,0 +1,11 @@
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p12
+*.key
+*.mobileprovision
+build/*
+.mypy_cache/*
+.prettify_files_time
+.DS_Store

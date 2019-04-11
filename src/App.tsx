@@ -1,21 +1,27 @@
+import { Provider } from "mobx-react";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { RootComponent } from "./RootComponent";
+import { rootStore } from "./stores/RootStore";
+import { Testing } from "./testing/testing";
+import { renderCounter } from "./utils/misc";
 
-export default class App extends React.Component {
+class App extends React.Component {
+  constructor(props: any) {
+    super(props);
+  }
+
+  componentDidMount() {
+    Testing.runAllTests();
+  }
+
   render() {
+    renderCounter.count("app");
     return (
-      <View style={styles.container}>
-        <Text>Opinionated app</Text>
-      </View>
+      <Provider stores={rootStore}>
+        <RootComponent />
+      </Provider>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
+export default App;
